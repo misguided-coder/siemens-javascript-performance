@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+	
+	//global abetment pattern
+	var SIEMENS = {
+		APPTRAX : {
+			CORE : {}		
+		}
+	};
+
+	SIEMENS.APPTRAX.CORE.colors = ['White','Red','Green','Blue','Yellow']
+	SIEMENS.APPTRAX.CORE.showColors = function () {
+		document.write(this.colors)
+		document.write("<br/>")
+	};
+	
+	SIEMENS.APPTRAX.CORE.addColor = function (color) {
+		this.colors.push(color);
+		console.log("Color is just added!!");
+	};
+	
+
+	SIEMENS.APPTRAX.CORE.addColor("Black");
+
+	SIEMENS.APPTRAX.CORE.showColors();
+		
+
+</script>
+</head>
+<body>
+</body>
+</html>

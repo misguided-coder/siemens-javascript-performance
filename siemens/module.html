@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+	
+	//module creation
+	var SIEMENS = (function() {
+		var SIEMENS = {};
+		SIEMENS.colors = ['White','Red','Green','Blue','Yellow']
+		SIEMENS.showColors = function () {
+			document.write(this.colors)
+			document.write("<br/>")
+		};
+	
+		SIEMENS.addColor = function (color) {
+			this.colors.push(color);
+			console.log("Color is just added!!");
+		};
+
+		return SIEMENS;		
+	})();	
+
+</script>
+</head>
+<body>
+</body>
+</html>
