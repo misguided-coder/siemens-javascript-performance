@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<button onclick='cleanResources();'>Clean Resources</button>
+<div id='div0'>I am very cool node.</div>
+
+<script>
+
+	var div0 = document.getElementById('div0');
+
+	function onClickHandler() {
+    		div0.innerHTML = 'I am the coolest div out here';
+	}
+
+	div0.addEventListener('click', onClickHandler);
+
+	function cleanResources() {
+		var div0 = document.getElementById('div0');
+		//not required to be removed, will be automatic
+   		//div0.removeEventListener('click', onClickHandler);
+		div0.parentNode.removeChild(div0);
+		console.log(`All resources cleared`);
+	}
+
+</script>
+</body>
+</html>
