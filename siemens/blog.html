@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blog Page</title>
+	<meta name="language" content="english" />
+	<meta charset="UTF-16">
+	<meta name="description" content="Blog of Billu Bhai" />
+	<meta name="keywords" content="Blog,Billu,Friends,Dost,Social" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<link rel="stylesheet" type="text/css" href="css/blog.css">
+	<link rel="stylesheet" type="text/css" href="css/blog-media-min.css">
+	<style>
+		#container > a { 
+			font-size: .6em;
+			position: absolute;
+			top: -1px;
+			right: 40px;
+			visibility: hidden;
+		}
+	</style>
+</head>
+<body>
+	<div id='container'>
+		<a href="#content">Go To Main Content</a>
+		<header>
+			<img id='site-logo' width=70 height=70 src="images/cool-kid.jpg" alt="Kool Kid" title="Kool Kid" />
+			<h2>Billu Blog</h2>
+			<nav id='top-nav-bar'>
+				<ul role="presentation">
+					<li><a href=#>Friends</a></li>
+					<li><a href=#>Dost</a></li>
+					<li><a href=#>Family</a></li>
+					<li><a href=#>Love</a></li>
+					<li><a href=#>Business</a></li>		
+					<li><a href=#>More</a></li>		
+				</ul>
+			</nav>
+			<form action="search.jsp" id='searchForm'>
+				<label for='search'>Search</label>
+				<input aria-label="search" type="text" id='search' placeholder="Search Keyword" />	
+			</form>
+		</header>
+		<main>
+			<section id='content'>
+				<article>
+					<h2>My Life</h2>
+					<img usemap="#map1" alt="Kool Kid" title="Kool Kid" src="images/cool-kid.jpg" />
+
+					<map name='map1'>
+						<area shape="rect" coords="0,0,100,100" href="cars.html" alt="Cars" title="Cars"></area>
+						<area shape="rect" coords="100,100,200,200" href="animations.html" alt="Animations" title="Animations"></area>
+						<area shape="rect" coords="0,100,400,400" href="2d-3d.html" alt="2D-3D" title="2D-3D"></area>	
+					</map>
+
+					<p>
+						My life is cool and beautiful.
+						My life is cool and beautiful.
+						My life is cool and beautiful.
+						My life is cool and beautiful.
+						My life is cool and beautiful.
+						My life is cool and beautiful.
+						My life is cool and beautiful.
+						My life is cool and beautiful.
+						My life is cool and beautiful.
+						My life is cool and beautiful.
+						My life is cool and beautiful.
+						My life is cool and beautiful.
+						My life is cool and beautiful.
+						My life is cool and beautiful.
+						My life is cool and beautiful.
+						My life is cool and beautiful.			
+					</p>	
+				</article>
+				<article>
+					<h3>My Videos</h3>
+					<embed width="420" height="345" src="http://www.youtube.com/v/XGSy3_Czz8k" type="application/x-shockwave-flash" />
+					<p>
+						Blah Blah Blah Blah	Blah Blah	
+						Blah Blah Blah Blah	Blah Blah	
+						Blah Blah Blah Blah	Blah Blah Blah Blah	Blah Blah lah Blah Blah Blah		
+					</p>
+				</article>
+			</section>
+		</main>
+		<aside id='sidebar'>
+			<div class='sidebar-item'>
+				<h2>Movies</h2>
+				<ul>
+					<li><a href=#>I love Movies.</a></li>
+					<li><a href=#>Art Movies are all time favourite.</a></li>
+					<li><a href=#>Ols movies are GOLDEN.</a></li>
+					<li><a href=#>Action Movies are Entertainment.</a></li>
+					<li><a href=#>Fiction movies are time pass.</a></li>
+				</ul>
+			</div>
+			<div class='sidebar-item'>
+				<h2>Chat Masala</h2>
+				<ul>
+					<li><a href=#>Sweet is alyaws good..</a></li>
+					<li><a href=#>Chat wali India Gate gali.</a></li>
+					<li><a href=#>Tunde Kabab are awesome.</a></li>
+					<li><a href=#>WOW.....Karim ka chicken kabab</a></li>
+					<li><a href=#>AAAHHH...Parathe wali gali</a></li>
+					<li><a href=#>OH NO....OM sweets wali Rabri</a></li>
+				</ul>
+			</div>
+		</aside>
+		<footer>
+			&copy; Billu Infotech, powered by Bill Gates.
+		</footer>
+	</div>
+</body>
+</html>

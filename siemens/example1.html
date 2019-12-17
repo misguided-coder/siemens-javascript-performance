@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+	
+	//explicit global variables and huge memory leak
+
+	var clock = null 
+	//unbounded variable can hold unlimited data
+	//BAD GLOBAL VARIABLE
+	//var data = []; 
+
+	//bounded variable can hold limited data
+	//GOOD GLOBAL VARIABLE
+	var MAX_BOUND = 500
+	var data = new Array(MAX_BOUND); 
+
+	function doWork() {
+		var string = new Array(50000).join("I am Cool and will eat up memory soon\n");
+		if(data.length <= MAX_BOUND)
+			data.push(string);		
+	}
+
+	function startWork() {
+		clock = setInterval(doWork,1000);
+	}
+
+	function stopWork() {
+		clearInterval(clock);
+		clock = null
+		data = null
+	}
+</script>
+</head>
+<body>
+	<button onclick='startWork();'>Hit Me and Bring Big Memory Leak</button>
+	<button onclick='stopWork();'>Hit Me Too</button>
+
+</body>
+</html>

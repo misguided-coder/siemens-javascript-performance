@@ -1,0 +1,90 @@
+<html>
+<head>
+<script>
+	function test(){
+
+		var a=document.documentElement;		
+		//var b=document.body;	
+		//alert(a.tagName);	
+		//alert(b.tagName);
+		//alert(a.hasChildNodes());
+		/*if(a.hasChildNodes()==true){
+			var arr=a.childNodes;			
+			//alert(arr.length);
+			alert(arr[0].tagName);
+			alert(arr[1].tagName);
+
+		}*/	
+	}
+
+
+	function createTable(){
+
+		var tableElmnt=document.createElement('table');
+		tableElmnt.setAttribute('border','2');
+		tableElmnt.setAttribute('width','30%');
+
+		var tbodyElmnt=document.createElement('tbody');
+		
+		var tr1Elmnt=document.createElement('tr');
+		var tr2Elmnt=document.createElement('tr');
+
+		tr1Elmnt.setAttribute('align','center');
+		tr2Elmnt.setAttribute('align','center');
+		
+		var td1Elmnt=document.createElement('td');
+		var td2Elmnt=document.createElement('td');
+		var td3Elmnt=document.createElement('td');
+		var td4Elmnt=document.createElement('td');
+	
+		var txt1Node=document.createTextNode('100');
+		var txt2Node=document.createTextNode('Raj');
+		var txt3Node=document.createTextNode('101');
+		var txt4Node=document.createTextNode('Rohan');
+	
+		td1Elmnt.appendChild(txt1Node);
+		td2Elmnt.appendChild(txt2Node);
+		td3Elmnt.appendChild(txt3Node);
+		td4Elmnt.appendChild(txt4Node);
+			
+		tr1Elmnt.appendChild(td1Elmnt);
+		tr1Elmnt.appendChild(td2Elmnt);
+		tr2Elmnt.appendChild(td3Elmnt);
+		tr2Elmnt.appendChild(td4Elmnt);
+
+		tbodyElmnt.appendChild(tr1Elmnt);
+		tbodyElmnt.appendChild(tr2Elmnt);
+
+		tableElmnt.appendChild(tbodyElmnt);
+
+		var dataDiv=document.getElementById("dataDiv");
+		dataDiv.appendChild(tableElmnt);
+	}
+
+
+	function deleteRow(){
+	
+		var id=document.getElementById("empId").value;
+		var arrTDs=document.getElementsByTagName('td');
+		for(var i=0;i<arrTDs.length;i++){
+			var tdRef=arrTDs[i];
+			if(tdRef.firstChild.nodeValue==id){
+				var trRef=tdRef.parentNode;
+				var tbodyRef=trRef.parentNode;
+				tbodyRef.removeChild(trRef);
+				break;				
+			}
+		}
+	}
+
+</script>
+</head>
+<body onload="createTable();">
+<center>
+<div id="dataDiv">
+</div>
+<input type=text id=empId />
+<input type=button value=Remove onclick="deleteRow();" />
+</center>
+</body>
+</html>

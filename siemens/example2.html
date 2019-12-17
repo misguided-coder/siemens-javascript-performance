@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+
+	//accidental global variables and causing huge memory leak
+		
+	"use strict";	
+
+	function doWork() {
+		var string = new Array(100).join(" I am Cool <br/>");
+		this.data = [] //accidental global
+		for(var i=0;i<10;i++) {
+			data.push(string);		
+		}
+		document.write(data);
+		document.write("<br/>Finish Line");
+	}
+
+	doWork();
+
+
+	function doStart() {
+		setInterval(doWork,2000);
+	}
+	
+</script>
+</head>
+<body>
+	<button onclick='doStart();'>Hit Me and Bring Big Memory Leak</button>
+
+</body>
+</html>

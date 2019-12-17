@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+
+	function loadData() {
+		return ["Black","Green","Blue","Red"];
+	}
+
+	var data = loadData();
+
+	setInterval(function() {
+    		var div0 = document.getElementById('div0');
+    		if(div0) {
+        		// Process node and data 
+        		div0.innerHTML = JSON.stringify(data);
+    		}
+		console.log(`Still working and holding Node Ref : ${div0} and Huge Data : ${data}`);
+	}, 1000);
+
+	function cleanResources() {
+ 		var div0 = document.getElementById('div0');
+   		div0.parentNode.removeChild(div0);
+		console.log(`All resources cleared`);
+	}
+</script>
+</head>
+<body>
+	<button onclick='cleanResources();'>Clean Resources</button>
+	
+	<div id='div0'>I am very cool node.</div>
+</body>
+</html>
