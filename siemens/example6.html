@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<button id='button0'>Click Me</button>
+<div id='div0'>I am very cool node</div>
+<h1 id='heading0'>Catch Me</div>
+
+<script>
+
+	//DOM references kept in external stores 
+	var nodes = {
+    		button : document.getElementById('button0'),
+    		div : document.getElementById('div0'),
+    		heading : document.getElementById('heading0')
+	};
+
+	nodes.button.onclick = doWork;
+
+	function doWork() {
+    		nodes.button.value = 'Cool Guy';
+    		nodes.div.style.backgroundColor = 'Black';
+    		nodes.heading.innerHTML = 'Oh, I am caught';
+   	}
+
+	function removeThings() {
+    		document.body.removeChild(document.getElementById('button0'));
+    		document.body.removeChild(document.getElementById('div0'));
+    		document.body.removeChild(document.getElementById('heading0'));
+		console.log('Things are gone from DOM Tree, but still in Memory!!!!!');
+	}
+
+	setTimeout(removeThings,5000);
+</script>
+</body>
+</html>

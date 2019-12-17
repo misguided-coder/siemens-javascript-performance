@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<ul id='list0'>
+	<li><a href=# id='dost'>Dost</a></li>
+	<li><a href=# id='friend'>Friend</a></li>
+	<li><a href=# id='yaar'>Yaar</a></li>
+	<li><a href=# id='bhai'>Bhai</a></li>
+</ul>
+<script>
+ 
+   	var friend = document.getElementById('friend');
+
+	friend.onclick = doWork;
+
+	function doWork() {
+		alert('Hurrey.......');    
+	}
+
+	function removeThings() {
+    		document.body.removeChild(document.getElementById('list0'));
+		console.log('Things are gone from DOM Tree, but still in Memory!!!!!');
+	}
+
+	setTimeout(removeThings,5000);
+</script>
+</body>
+</html>

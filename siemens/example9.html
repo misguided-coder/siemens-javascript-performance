@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<button onclick='doStart();'>Start Creating Objects</button>
+<button onclick='doStop();'>Stop Creating Objects & Make them unreachable</button>
+
+<script>
+	//Unpredictable behavior of Garbage Collectors
+	//Not collecting garbage even if they are ready to be GC
+	//Check GC time in the result view
+
+	'use strict';
+
+	var clock = null;
+
+	function produceObjects() {
+    		var h1, obj, bigstr;
+    		for (var i = 1; i <= 100; i++) {
+        		h1 = document.createElement("h1");
+        		bigstr = new Array(60000).join(' Cool ');
+        		obj = {
+           	 		bigstr: bigstr,
+            			h1: h1
+        		};
+        		h1.some = obj;
+    		}
+	}
+
+	function doStart() {
+    		clock = setInterval(produceObjects, 1000);
+	}
+
+	function doStop() {
+        	clearInterval(clock);
+    		clock = null;
+	}
+
+</script>
+</body>
+</html>

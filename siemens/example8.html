@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<script>
+	//Closures causing a big memory leakage
+
+	var roti = null;
+	var prepare = function () {
+	  	var naan = roti;
+  		var done = function () {
+			//naan will never GC
+    			if (naan)
+      				console.log("Lets enjoy Naan!!");
+  		};
+
+		roti = {
+    			message: new Array(500000).join('Roti is Ready'),
+    			eat: function () {
+      				console.log(message);
+    			}
+  		};
+		
+		done();
+
+	};
+
+	setInterval(prepare, 1000);
+
+</script>
+</body>
+</html>
